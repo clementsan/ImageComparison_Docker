@@ -5,7 +5,7 @@ FROM python:3.4.6
 RUN pip install nibabel scikit-image
 
 # Copy our algorithm script into the image
-COPY myImgeComparison.py /myImageComparison.py
+COPY myImageComparison.py /myImageComparison.py
 
 # Make our script the executable that will be run via "docker run"
 ENTRYPOINT ["python", "/myImageComparison.py"]
