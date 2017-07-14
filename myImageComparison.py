@@ -1,6 +1,7 @@
 import numpy as np
 import nibabel
 import argparse
+import json
 
 
 parser = argparse.ArgumentParser(description='Compare images using Jaccard Index')
@@ -26,5 +27,6 @@ union = np.logical_or(TestImg, TruthImg)
 
 jaccard = intersection.sum() / float(union.sum())
 
-print {'Jaccard': jaccard}
+print (json.dumps({'Jaccard': jaccard}))
+
 
